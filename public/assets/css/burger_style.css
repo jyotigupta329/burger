@@ -4,16 +4,38 @@ li {
     background: #faebd7;
   }
   
-  .label {
+  ul {
     font-weight: bold;
+    text-align: center;
   }
-  
-  .create-update-form {
-    padding: 5px;
-    margin: 5px;
-    background: aqua;
+
+  label {
+    font-weight: bold;
   }
   
   .form-group {
     margin-bottom: 5px;
+  }
+
+  body, html {
+    height: 100%;
+  }
+
+  .bg{
+    background: url("https://images.pexels.com/photos/35793/burger-cheese-food-hamburger.jpg?auto=compress&cs=tinysrgb&dpr=2&h=350");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: 0.5; */
+  }
+
+  h1{
+    text-align: center;
+    color: orangered;
+  }
+
+  h3{
+    text-align: center;
+    color: black;
   }

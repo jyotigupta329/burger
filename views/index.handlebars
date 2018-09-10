@@ -1,40 +1,42 @@
-<h1>Eat Da Burger</h1>
-<div class="row">
-    <div class="col-md-12">
-        <h2>Add a Burger</h2>
-        <form class="create-form">
-            <div class="form-group">
-                <label for="newBurger">Burger Name:</label>
-                <input type="text" id="newBurger" name="name">
-            </div>
-            <div class="form-group">
-                <button type="submit">Add Burger!!</button>
-            </div>
-        </form>
+<div class="container">
+    <h1>Eat Da Burger</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Add a Burger</h3>
+            <form class="create-form" style="text-align: center">
+                <div class="form-group">
+                    <label for="newBurger">Burger Name:</label>
+                    <input type="text" id="newBurger" name="name">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Add Burger!!</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-{{!--
-<h2>Cats that are not sleepy!</h2> --}}
+<br>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>Burgers not devoured</h3>
+            <ul>
+                {{#each burgers}} {{#unless devoured}}
+                <div>{{burger_name}}
+                <span>
+                    <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devoured}}">Devour Me!!</button>
+                </span></div>
+                {{> burger-block devoured=false}} {{/unless}} {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-2">
 
-<div class="row">
-    <div class="col-md-6">
-        <h3>Burgers not devoured</h3>
-        <ul>
-            {{#each burgers}} {{#unless devoured}} 
-            <div>{{burger_name}}</div>
-            <span>
-                <button class="change-devoured" data-id="{{id}}"
-                data-newdevour="{{devoured}}">Devour Me!!</button>
-            </span>
-            {{> burger-block devoured=false}} {{/unless}} {{/each}}
-        </ul>
-    </div>
-    <div class="col-md-6">
-        <h3>Burgers that are devoured</h3>
-        <ul>
-            {{#each burgers}} {{#if devoured}} 
-            <div>{{burger_name}}</div>
-             {{/if}} {{/each}}
-        </ul>
+        </div>
+        <div class="col-md-5">
+            <h3>Burgers that are devoured</h3>
+            <ul>
+                {{#each burgers}} {{#if devoured}}
+                <div>{{burger_name}}</div>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
     </div>
 </div>
